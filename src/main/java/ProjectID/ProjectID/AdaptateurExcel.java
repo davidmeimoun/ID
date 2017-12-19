@@ -45,12 +45,12 @@ public class AdaptateurExcel {
 					String niveau_cours = row.getCell(10) != null ? row.getCell(10).getStringCellValue() : null;
 					String note = row.getCell(11) != null ? String.valueOf(row.getCell(11).getNumericCellValue())
 							: null;
-					if (annee.equals("2007"))
+					if (Integer.parseInt(annee) >= 2007)
 						if (statut.equals("etudiant")) {
 							if (row.getCell(11).getNumericCellValue() > 10) {
 
 								Etudiant etudiant = new Etudiant((id), nom, prenom, provenance, formationPrecedente,
-										null, annee, null, niveauInsertion);
+										null, annee, null, niveauInsertion, null);
 								model.getEtudiants().add(etudiant);
 								Inscription inscription = new Inscription(id, id_cours, annee, note);
 								model.getInscriptions().add(inscription);
@@ -63,10 +63,8 @@ public class AdaptateurExcel {
 				}
 			}
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -100,7 +98,7 @@ public class AdaptateurExcel {
 							: null;
 					if (annee.equals("2006"))
 						if (statut.equals("enseignant")) {
-							Enseignant enseignant = new Enseignant(id, nom, prenom, null);
+							Enseignant enseignant = new Enseignant(id, nom, prenom, null, null);
 							model.getEnseignants().add(enseignant);
 							Enseigne enseigne = new Enseigne(id, id_cours, annee, null);
 							model.getEnseignes().add(enseigne);
@@ -116,10 +114,8 @@ public class AdaptateurExcel {
 		} catch (
 
 		FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -151,18 +147,15 @@ public class AdaptateurExcel {
 					String niveau_cours = row.getCell(10) != null ? row.getCell(10).getStringCellValue() : null;
 					String note = row.getCell(11) != null ? String.valueOf(row.getCell(11).getNumericCellValue())
 							: null;
-					if(statut.equals("etudiant"))
-					if (provenance.equals("France")) {
-					
+					if (statut.equals("etudiant"))
+						if (provenance.equals("France")) {
 
-							Etudiant etudiant = new Etudiant((id), nom, prenom, provenance, formationPrecedente,
-									null, annee, null, niveauInsertion);
+							Etudiant etudiant = new Etudiant((id), nom, prenom, provenance, formationPrecedente, null,
+									annee, null, niveauInsertion, null);
 							model.getEtudiants().add(etudiant);
 							Inscription inscription = new Inscription(id, id_cours, annee, note);
 							model.getInscriptions().add(inscription);
-					}
-
-					
+						}
 
 				}
 
@@ -171,10 +164,8 @@ public class AdaptateurExcel {
 		} catch (
 
 		FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

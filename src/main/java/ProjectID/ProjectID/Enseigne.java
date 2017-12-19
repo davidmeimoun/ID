@@ -15,7 +15,6 @@ public class Enseigne {
 
 	public Enseigne() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public long getId_enseignant() {

@@ -13,7 +13,6 @@ public class Model {
 
 	public Model() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Set<Cours> getCours() {

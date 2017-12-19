@@ -1,4 +1,5 @@
 package ProjectID.ProjectID;
+
 public class Etudiant {
 	private int id_etudiant;
 	private String nom;
@@ -9,14 +10,14 @@ public class Etudiant {
 	private String anneeDebut;
 	private String age;
 	private String niveauInsertion;
+	private String telephone;
 
 	public Etudiant() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Etudiant(int id_etudiant, String nom, String prenom, String provenance, String formationPrecedente,
-			String paysDeFormationPrecedente, String anneeDebut, String age, String niveauInsertion) {
+			String paysDeFormationPrecedente, String anneeDebut, String age, String niveauInsertion, String telephone) {
 		super();
 		this.id_etudiant = id_etudiant;
 		this.nom = nom;
@@ -27,6 +28,7 @@ public class Etudiant {
 		this.anneeDebut = anneeDebut;
 		this.age = age;
 		this.niveauInsertion = niveauInsertion;
+		this.telephone = telephone;
 	}
 
 	public int getId_etudiant() {
@@ -39,6 +41,14 @@ public class Etudiant {
 
 	public String getNom() {
 		return nom;
+	}
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
 	}
 
 	public void setNom(String nom) {
@@ -122,7 +132,5 @@ public class Etudiant {
 			return false;
 		return true;
 	}
-	
-	
 
 }

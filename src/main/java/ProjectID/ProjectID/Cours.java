@@ -9,7 +9,6 @@ public class Cours {
 
 	public Cours() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Cours(long id_cours, String libelle, String type, String niveau, String heures) {

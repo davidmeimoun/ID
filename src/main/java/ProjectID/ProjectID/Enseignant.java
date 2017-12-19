@@ -1,26 +1,36 @@
 package ProjectID.ProjectID;
+
 public class Enseignant {
 
 	private long id_enseignant;
 	private String nom;
 	private String prenom;
 	private String mail;
+	private String telephone;
 
-	public Enseignant(long id_enseignant, String nom, String prenom, String mail) {
+	public Enseignant(long id_enseignant, String nom, String prenom, String mail, String telephone) {
 		super();
 		this.id_enseignant = id_enseignant;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.mail = mail;
+		this.telephone = telephone;
 	}
 
 	public Enseignant() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public long getId_enseignant() {
 		return id_enseignant;
+	}
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
 	}
 
 	public void setId_enseignant(long id_enseignant) {
@@ -72,7 +82,5 @@ public class Enseignant {
 			return false;
 		return true;
 	}
-	
-	
 
 }
