@@ -1,6 +1,6 @@
 package ProjectID.ProjectID;
 public class Etudiant {
-	private long id_etudiant;
+	private int id_etudiant;
 	private String nom;
 	private String prenom;
 	private String provenance;
@@ -15,7 +15,7 @@ public class Etudiant {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Etudiant(long id_etudiant, String nom, String prenom, String provenance, String formationPrecedente,
+	public Etudiant(int id_etudiant, String nom, String prenom, String provenance, String formationPrecedente,
 			String paysDeFormationPrecedente, String anneeDebut, String age, String niveauInsertion) {
 		super();
 		this.id_etudiant = id_etudiant;
@@ -29,11 +29,11 @@ public class Etudiant {
 		this.niveauInsertion = niveauInsertion;
 	}
 
-	public long getId_etudiant() {
+	public int getId_etudiant() {
 		return id_etudiant;
 	}
 
-	public void setId_etudiant(long id_etudiant) {
+	public void setId_etudiant(int id_etudiant) {
 		this.id_etudiant = id_etudiant;
 	}
 
@@ -100,5 +100,29 @@ public class Etudiant {
 	public void setNiveauInsertion(String niveauInsertion) {
 		this.niveauInsertion = niveauInsertion;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id_etudiant;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Etudiant other = (Etudiant) obj;
+		if (id_etudiant != other.id_etudiant)
+			return false;
+		return true;
+	}
+	
+	
 
 }
